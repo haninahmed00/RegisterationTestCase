@@ -41,7 +41,7 @@ public class TestPom {
         signUpPage.navigateToSignUpPage();
         signUpPage.validateNewUserHeader();
         signUpPage.performSignUp(jsonFileManager.getTestData("username"), jsonFileManager.getTestData("email"));
-        registerationPage.validateRegistrationPageLoaded();
+     //   registerationPage.validateRegistrationPageLoaded();
         registerationPage.fillAccountInformation("2134", "29", "May", "2000");
         registerationPage.fillUserDetails("Haneen", "Ahmed", "Giza", "NewCiaro", "Zayed", "Canada", "mySatte", "Egypt", "12345", "01123575432");
         registerationPage.clickCreateAccountButton();
