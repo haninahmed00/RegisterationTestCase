@@ -6,18 +6,8 @@ on:
       testsPath:
         description: 'Path to Tests to be Executed'
         default: ''
- 
- 
-  schedule:
-    - cron: '0 23 * * *'
- 
-  pull_request:
-    branches:
-      - master
- 
- 
 jobs:
-  E2ETests_WindosVersion:
+  Windos_Execution:
     runs-on: windows-latest
     permissions:
       checks: write
@@ -47,7 +37,7 @@ jobs:
       - name: Upload Allure Report as Artifact Windows
         uses: actions/upload-artifact@v4
         with:
-         name: WindowsAllure
+         name: Windows_Allure
          path: target/site/allure-maven-plugin/index.html
  
       - name: Publish Report
@@ -58,4 +48,8 @@ jobs:
           name: Tests Report Edge_Windows
           path: 'target/surefire-reports/TEST-*.xml'
           reporter: java-junit
+ 
+ 
+ 
+ 
  
