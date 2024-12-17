@@ -30,7 +30,7 @@ public class TestPom {
         signUpPage = new SignUpPage(driver);
         registerationPage = new RegisterationPage(driver);
         accountCreatedPage = new AccountCreatedPage(driver);
-        jsonFileManager = new JsonFileManager("D:\\Users\\java\\Java Task\\RegisterationTestCase\\src\\test\\resources\\testData.json");
+        jsonFileManager = new JsonFileManager("src\\test\\resources\\testData.json");
     }
 
     @Test(description = "Create new account with valid data")
