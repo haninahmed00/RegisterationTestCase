@@ -1,13 +1,18 @@
 name: E2ETests
 on:
   workflow_dispatch:
-
-jobs:
- E2E_Edge_Windows_Test:
-    runs-on: windows-latest
-    permissions:
+     inputs:
+      testsPath:
+        description: 'Path to Tests to be Executed'
+        default: ''
+        
+        jobs:
+      E2E_Edge_Windows_Test:
+      runs-on: windows-latest
+      permissions:
       checks: write
-    steps:
+      
+  steps:
       - name: Checkout Code
         uses: actions/checkout@v4
       
@@ -20,10 +25,14 @@ jobs:
       - name: Set up Maven
         uses: stCarolas/setup-maven@v4.5
         with:
-          maven-version: 3.9.6
+          maven-version: 3.9.9
 
       - name: Run Tests
         continue-on-error: true
         run: mvn test "-DbrowserType=edge" "-Dallure.results.directory=target/allure-results" "-DheadlessExecution=false" "-Dtest=${{ github.event.inputs.testsPath }}"
-
-     
+      
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: Allure-Report-Edge-Windows
+          path: target/allure-results
