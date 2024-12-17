@@ -7,7 +7,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import registerationPages.*;
-import utilites.DriveFactory;
+import utilites.DriverFactory;
+import utilites.DriverFactory;
 import utilites.JsonFileManager;
 import utilites.PropertiesReader;
 
@@ -24,7 +25,7 @@ public class TestPom {
     @BeforeClass
     public void setup() {
         PropertiesReader.loadProperties();
-        driver = DriveFactory.initiateDriver(System.getProperty("BrowserName"), true);
+        driver = DriverFactory.initiateDriver(System.getProperty("BrowserName","chrome"),true, true);
         homePage = new HomePage(driver);
         signUpPage = new SignUpPage(driver);
         registerationPage = new RegisterationPage(driver);
