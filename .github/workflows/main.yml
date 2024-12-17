@@ -84,7 +84,7 @@ jobs:
 
       - name: Run Tests
         continue-on-error: true
-        run: mvn test "-DbrowserType=chrome" "-Dallure.results.directory=target/allure-results" "-DheadlessExecution=true" "-Dtest=${{ github.event.inputs.testsPath }}"
+        run: mvn -DBrowserName="chrome" -Dheadless=true -Dtest="${{ github.event.inputs.testsPath}}" test
 
       - name: Upload Allure Results
         uses: actions/upload-artifact@v4
