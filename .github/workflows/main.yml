@@ -1,4 +1,4 @@
-name: Remote Test Execution
+name: E2eTestsWindos
  
 on:
   workflow_dispatch:
