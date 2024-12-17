@@ -1,18 +1,17 @@
-name: E2ETests
+name: E2E Tests
+
 on:
   workflow_dispatch:
-     inputs:
+    inputs:
       testsPath:
         description: 'Path to Tests to be Executed'
         default: ''
-        
-        jobs:
-      E2E_Edge_Windows_Test:
-      runs-on: windows-latest
-      permissions:
+jobs:
+   E2E_Edge_Windows_Test:
+    runs-on: windows-latest
+    permissions:
       checks: write
-      
-  steps:
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v4
       
