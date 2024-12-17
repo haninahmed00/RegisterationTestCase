@@ -18,7 +18,7 @@ on:
 
 
 jobs:
-  Remote_Tests_Execution:
+  Windows_Execution:
     runs-on: windows-latest
     permissions:
       checks: write
@@ -61,7 +61,7 @@ jobs:
           reporter: java-junit
 
 
-  Remote_Tests_Execution_Ubuntu_In_Chrome:
+  Ubuntu_Excution:
     runs-on: ubuntu-latest
     permissions:
       checks: write
